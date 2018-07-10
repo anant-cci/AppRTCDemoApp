@@ -10,6 +10,6 @@
 
 @interface ARTCVideoChatViewController : UIViewController
 
-@property (strong, nonatomic) NSString *roomName;
+- (void)setRoomName:(NSString *)roomName;
 
 @end

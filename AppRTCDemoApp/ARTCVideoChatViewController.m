@@ -24,6 +24,7 @@
 @property (assign, nonatomic) CGSize localVideoSize;
 @property (assign, nonatomic) CGSize remoteVideoSize;
 
+@property (strong, nonatomic) NSString *roomName;
 @property (strong, nonatomic) NSString *roomUrl;
 
 @end
@@ -37,7 +38,6 @@
     //RTCEAGLVideoViewDelegate provides notifications on video frame dimensions
     [self.remoteView setDelegate:self];
     [self.localView setDelegate:self];
-    [self setRoomName:self.roomName];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,7 +54,7 @@
     [self disconnect];
 }
 
-- (void)applicationWillResignActive:(UIApplication*)application {
+- (void)applicationWillResignActive:(UIApplication *)application {
     [self disconnect];
 }
 
@@ -64,7 +64,7 @@
 }
 
 - (void)setRoomName:(NSString *)roomName {
-    _roomName = roomName;
+    self.roomName = roomName;
     self.roomUrl = [NSString stringWithFormat:@"%@/r/%@", SERVER_HOST_URL, roomName];
 }
 
@@ -85,7 +85,6 @@
     self.remoteVideoTrack = nil;
     [self.remoteView renderFrame:nil];
     [self videoView:self.localView didChangeVideoSize:self.localVideoSize];
-    
 }
 
 #pragma mark - ARDAppClientDelegate

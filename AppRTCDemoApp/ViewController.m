@@ -42,7 +42,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ARTCVideoChatViewControllerSegue"]) {
         ARTCVideoChatViewController *aRTCVideoChatViewController = segue.destinationViewController;
-        aRTCVideoChatViewController.roomName = self.roomNameTextField.text;
+        [aRTCVideoChatViewController setRoomName:self.roomNameTextField.text];
     }
 }
 
