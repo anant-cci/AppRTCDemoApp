@@ -120,11 +120,7 @@
 }
 
 - (void)appClient:(ARDAppClient *)client didError:(NSError *)error {
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:[NSString stringWithFormat:@"%@", error]
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@", error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
     [self disconnect];
 }
