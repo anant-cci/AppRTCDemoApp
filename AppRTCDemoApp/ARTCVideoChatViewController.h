@@ -10,6 +10,6 @@
 
 @interface ARTCVideoChatViewController : UIViewController
 
-- (void)setRoomName:(NSString *)roomName;
+- (void)setRoomNameWith:(NSString *)roomName;
 
 @end

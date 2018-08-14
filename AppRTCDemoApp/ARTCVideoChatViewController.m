@@ -63,7 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setRoomName:(NSString *)roomName {
+- (void)setRoomNameWith:(NSString *)roomName {
     self.roomName = roomName;
     self.roomUrl = [NSString stringWithFormat:@"%@/r/%@", SERVER_HOST_URL, roomName];
 }
